@@ -51,7 +51,7 @@ GuitarTab& SecondHarmony(GuitarTab& file)
 	return file;
 }
 
-GuitarTab& FirstRythem(GuitarTab& file)
+GuitarTab& FirstRhythm(GuitarTab& file)
 {
 	file.AddStave();
 	file.SetString(GuitarTab::A_String)
@@ -80,39 +80,7 @@ GuitarTab& FirstRythem(GuitarTab& file)
 	return file;
 }
 
-GuitarTab& SecondRythem(GuitarTab& file)
-{
-	file.AddStave();
-	file.SetString(GuitarTab::A_String)
-	.AddNote({6})
-	.AddChordOrInterval({{GuitarTab::G_String, 8}, {GuitarTab::B_String, 7}})
-	.AddBarLine()
-	.AddNote({6})
-	.AddChordOrInterval({{GuitarTab::G_String, 8}, {GuitarTab::B_String, 7}})
-	.AddBarLine()
-
-	.SetString(GuitarTab::E_String)
-	.AddNote({9})
-	.AddChordOrInterval({{GuitarTab::G_String, 10}, {GuitarTab::D_String, 11}})
-	.AddBarLine()
-	.AddNote({9})
-	.AddChordOrInterval({{GuitarTab::G_String, 10}, {GuitarTab::D_String, 11}})
-	.AddBarLine()
-
-	.AddNote({6})
-	.AddChordOrInterval({{GuitarTab::G_String, 7}, {GuitarTab::D_String, 6}})
-	.AddBarLine()
-
-	.AddNote({4})
-	.AddChordOrInterval({{GuitarTab::G_String, 4}, {GuitarTab::D_String, 6}})
-	.AddBarLine()
-
-	.AddNote({4})
-	.AddChordOrInterval({{GuitarTab::G_String, 4}, {GuitarTab::D_String, 6}});
-	return file;
-}
-
-GuitarTab& ThirdRythem(GuitarTab& file)
+GuitarTab& SecondRhythm(GuitarTab& file)
 {
 	file.AddStave();
 	file.SetString(GuitarTab::A_String)
@@ -144,7 +112,39 @@ GuitarTab& ThirdRythem(GuitarTab& file)
 	return file;
 }
 
-GuitarTab& FinalRythem(GuitarTab& file)
+GuitarTab& ThirdRhythm(GuitarTab& file)
+{
+	file.AddStave();
+	file.SetString(GuitarTab::A_String)
+	.AddNote({6})
+	.AddChordOrInterval({{GuitarTab::G_String, 8}, {GuitarTab::B_String, 7}})
+	.AddBarLine()
+	.AddNote({6})
+	.AddChordOrInterval({{GuitarTab::G_String, 8}, {GuitarTab::B_String, 7}})
+	.AddBarLine()
+
+	.SetString(GuitarTab::E_String)
+	.AddNote({9})
+	.AddChordOrInterval({{GuitarTab::G_String, 10}, {GuitarTab::D_String, 11}})
+	.AddBarLine()
+	.AddNote({9})
+	.AddChordOrInterval({{GuitarTab::G_String, 10}, {GuitarTab::D_String, 11}})
+	.AddBarLine()
+
+	.AddNote({6})
+	.AddChordOrInterval({{GuitarTab::G_String, 7}, {GuitarTab::D_String, 6}})
+	.AddBarLine()
+
+	.AddNote({4})
+	.AddChordOrInterval({{GuitarTab::G_String, 4}, {GuitarTab::D_String, 6}})
+	.AddBarLine()
+
+	.AddNote({4})
+	.AddChordOrInterval({{GuitarTab::G_String, 4}, {GuitarTab::D_String, 6}});
+	return file;
+}
+
+GuitarTab& FinalRhythm(GuitarTab& file)
 {
 	file.AddStave();
 	file.SetString(GuitarTab::E_String)
@@ -197,22 +197,22 @@ int main(int argc, char const *argv[])
 	SecondHarmony(file).SetString(GuitarTab::B_String).AddNote({11});
 	FirstHarmony(file);
 	SecondHarmony(file);
-	FirstRythem(file);
-	FirstRythem(file);
-	SecondRythem(file);
-	SecondRythem(file);
+	FirstRhythm(file);
+	FirstRhythm(file);
+	SecondRhythm(file);
+	SecondRhythm(file);
 	FirstHarmony(file);
 	SecondHarmony(file);
-	FirstRythem(file);
-	FirstRythem(file);
-	ThirdRythem(file);
-	ThirdRythem(file);
+	FirstRhythm(file);
+	FirstRhythm(file);
+	ThirdRhythm(file);
+	ThirdRhythm(file);
 	FirstHarmony(file);
 	SecondHarmony(file).SetString(GuitarTab::B_String).AddNote({11});
 	FirstHarmony(file);
 	SecondHarmony(file);
-	FirstRythem(file);
-	ThirdRythem(file);
-	FinalRythem(file).EndGuitarTab().Write("Tamino indigo night.md");
+	FirstRhythm(file);
+	ThirdRhythm(file);
+	FinalRhythm(file).EndGuitarTab().Write("Tamino indigo night.md");
 	return 0;
 }
